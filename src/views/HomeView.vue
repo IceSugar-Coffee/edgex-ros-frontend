@@ -9,7 +9,7 @@
 // @ is an alias to /src
 import getStart from "../components/GettingStarted.vue"
 export default {
-  name: 'HomeView',
+  // name: 'HomeView',
   components: {
     getStart
   }

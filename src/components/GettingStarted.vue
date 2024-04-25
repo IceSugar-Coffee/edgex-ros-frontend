@@ -3,7 +3,7 @@
         <h1>{{ msg }}</h1>
         <p class="description">一个智能网联机器人平台</p>
         <p class="actions" data-v-9e9e3e87="">
-            <a class="get-started" href="/guide/introduction.html" data-v-9e9e3e87="">
+            <a class="get-started" href="/teleop" data-v-9e9e3e87="">
                 一起摇滚吧!
                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"
                     data-v-9e9e3e87="">
