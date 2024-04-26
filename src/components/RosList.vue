@@ -53,8 +53,16 @@
             <td>{{device.name}}</td>
             <td>{{device.description}}</td>
             <td>{{device.label}}</td>
-            <td>{{device.state}}</td>
-            <td>{{device.cmd}}</td>
+            <td>
+              <span class="badge bg-success">
+                {{device.state}}
+              </span>
+            </td>
+            <td class="text-center">
+              <span class="badge bg-primary text-light"  role="button" @click="toTeleop(device.id)">
+                  <i class="fa fa-terminal font-weight-bolder"></i>
+              </span>
+            </td>
           </tr>
         </tbody>>
       </table>
@@ -82,6 +90,11 @@ export default {
         state: "已控制",
         cmd: "cmd"
       }]
+    }
+  },
+  methods:{
+    toTeleop (id){
+      this.$router.push({name:'teleop',params:{id:id}});
     }
   }
 }
