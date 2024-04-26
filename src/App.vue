@@ -1,7 +1,8 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/teleop">Teleop</router-link>
+    <router-link to="/teleop">Teleop</router-link> |
+    <router-link to="/roslist">roslist</router-link>
   </nav>
   <router-view/>
 </template>

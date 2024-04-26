@@ -1,7 +1,7 @@
 <template>
-  <div class="roslist">
+  <div class="ros">
     <img alt="Vue logo" src="../assets/bg_x.png">
-    <rosList msg="Welcome To Ros-view!"/>
+    <rosList/>
   </div>
 </template>
 
@@ -17,5 +17,6 @@ export default {
 </script>
 
 <style scoped>
-
+@import 'bootstrap/dist/css/bootstrap.css';
+@import '@fortawesome/fontawesome-free/css/all.min.css';
 </style>
