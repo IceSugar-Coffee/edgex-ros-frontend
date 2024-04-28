@@ -8,9 +8,9 @@
 
 
 
-import imageShow from "../components/imageShow.vue"
-import chart from "../components/MyChart.vue"
-import controller from "../components/carController.vue"
+import imageShow from "../../components/imageShow.vue"
+import chart from "../../components/MyChart.vue"
+import controller from "../../components/carController.vue"
 export default {
   components: {
     chart,
@@ -27,5 +27,5 @@ export default {
 </script>
 
 <style scoped>
-@import '../assets/css/teleop.css';
+@import '../../assets/css/teleop.css';
 </style>

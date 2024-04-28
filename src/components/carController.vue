@@ -16,15 +16,15 @@ export default {
     methods: {
         getUrl(act) {
             //TODO 此处act和device profile并不对应, 需要修改 
-            var ip = "172.19.140.143" //对应broker代理机的地址, edgex核心服务也要在这台机器上
-            var devicename = "ros-test" //对应创建的设备名称
+            var ip = "172.24.37.153" //对应broker代理机的地址, edgex核心服务也要在这台机器上
+            var devicename = "device1" //对应创建的设备名称
             return "http://" + ip + ":59882/api/v2/device/name/" + devicename + "/" + act
             // return "http://" + ip + ":59882/api/v2/device/name/" + devicename + "/run" //测试用
         },
         forward() {
             axios({
                 method: 'put',
-                url: this.getUrl("run"),
+                url: this.getUrl("forward"),
                 data: {
                     run: true
                 }
