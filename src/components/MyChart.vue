@@ -1,5 +1,7 @@
 <template>
-    <div id="main" style="width: 600px;height:400px;"></div>
+    <div class="chart">
+        <div id="main" style="width: 600px;height:400px;"></div>
+    </div>
 </template>
 
 <script>
@@ -30,7 +32,6 @@ export default {
                 .catch(error => console.log(error))
         },
         async drawMyChart() {
-            console.log(await this.getVelocity())
             let chartDom = document.getElementById('main')
             let myChart = echarts.init(chartDom)
             let option = {
@@ -104,3 +105,12 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+
+.chart {
+    display: flex;
+    justify-content: center;
+}
+
+</style>

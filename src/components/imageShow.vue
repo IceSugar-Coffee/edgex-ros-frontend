@@ -24,7 +24,8 @@ export default {
                 url: this.getCmdUrl("cameraUrl")
             })
                 .then((response) => {
-                    this.imgUrl = response.data.event.readings[0].value + "?" + new Date().getTime();
+                    this.imgUrl = response.data.event.readings[0].value
+                    + "?_=" + new Date().getTime();
                 })
                 .catch(error => console.log(error))
         },
