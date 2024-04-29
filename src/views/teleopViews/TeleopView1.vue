@@ -1,7 +1,7 @@
 <template>
-  <imageShow />
-  <controller />
-  <chart />
+  <imageShow deviceName="device1"/>
+  <controller deviceName="device1"/>
+  <chart deviceName="device1"/>
 </template>
 
 <script>

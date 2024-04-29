@@ -3,18 +3,37 @@
 </template>
 
 <script>
+import axios from 'axios';
 import * as echarts from 'echarts';
 export default {
+    data() {
+        return {
+        }
+    },
+    props: {
+        deviceName: String
+    },
     mounted() {
-        this.drawMyChart();
+        this.drawMyChart()
     },
     methods: {
-        drawMyChart() {
-            let chartDom = document.getElementById('main');
-            let myChart = echarts.init(chartDom);
-            let option;
-
-            option = {
+        getCmdUrl(act) {
+            var ip = "10.195.154.231" //TODO对应broker代理机的地址, edgex核心服务也要在这台机器上
+            return "http://" + ip + ":59882/api/v2/device/name/" + this.deviceName + "/" + act
+        },
+        async getVelocity() {
+            return await axios({
+                method: 'get',
+                url: this.getCmdUrl("velocity")
+            })
+                .then((response) => parseFloat(response.data.event.readings[0].value))
+                .catch(error => console.log(error))
+        },
+        async drawMyChart() {
+            console.log(await this.getVelocity())
+            let chartDom = document.getElementById('main')
+            let myChart = echarts.init(chartDom)
+            let option = {
                 series: [
                     {
                         type: 'gauge',
@@ -61,26 +80,26 @@ export default {
                         },
                         data: [
                             {
-                                value: 70//默认是70 这里改数据
+                                value: await this.getVelocity()
                             }
                         ]
                     }
                 ]
-            };
-            setInterval(function () {
+            }
+            setInterval(async () => {
                 myChart.setOption({
                     series: [
                         {
                             data: [
                                 {
-                                    value: +(Math.random() * 100).toFixed(2)
+                                    value: await this.getVelocity()
                                 }
                             ]
                         }
                     ]
                 });
-            }, 2000);//每两秒生成一个随机数赋值value
-            myChart.setOption(option);
+            }, 1000)
+            myChart.setOption(option)
         },
     }
 }
