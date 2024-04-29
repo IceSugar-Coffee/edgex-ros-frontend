@@ -1,8 +1,8 @@
 <template>
-  <TeleopHead deviceName="device1"/>
-  <imageShow deviceName="device1"/>
-  <controller deviceName="device1"/>
-  <chart deviceName="device1"/>
+  <TeleopHead deviceName="device3"/>
+  <imageShow deviceName="device3"/>
+  <controller deviceName="device3"/>
+  <chart deviceName="device3"/>
 </template>
 
 <script>
