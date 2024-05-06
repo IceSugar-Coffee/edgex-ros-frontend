@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  ui: 
+    container_name: our_ui
+    image: nginx 
+    restart: always
+    ports:
+      - 3000:80 
+    volumes:
+      - ./dist:/usr/share/nginx/html
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+    privileged: true # 这个必须要，解决nginx的文件调用的权限问题
+
+
