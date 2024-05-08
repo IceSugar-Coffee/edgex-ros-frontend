@@ -2,18 +2,17 @@
     <div class="hello">
         <h1>{{ msg }}</h1>
         <p class="description">一个智能网联机器人平台</p>
-        <p class="actions" data-v-9e9e3e87="">
-            <a class="get-started" href="/roslist" data-v-9e9e3e87="">
-                一起摇滚吧!
+        <p class="actions">
+            <a class="get-started" href="/roslist" @click="toConsole()">
+                进入控制台
                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"
                     data-v-9e9e3e87="">
                     <path
-                        d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"
-                        data-v-9e9e3e87="">
+                        d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z">
                     </path>
                 </svg>
             </a>
-            <a class="setup" href="/guide/quick-start.html" data-v-9e9e3e87="">文档</a>
+            <a class="setup" @click="toAbout()">关于</a>
         </p>
     </div>
 </template>
@@ -23,6 +22,14 @@ export default {
     name: 'HelloWorld',
     props: {
         msg: String
+    },
+    methods: {
+        toConsole() {
+            this.$router.push("/roslist");
+        },
+        toAbout() {
+            this.$router.push("/about");
+        }
     }
 }
 </script>
