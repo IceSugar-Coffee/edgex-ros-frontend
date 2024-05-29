@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/bg_x.png">
-    <getStart msg="Welcome To Our Edgex-ROS App!"/>
+    <getStart msg="Edge Computing Based Robot System"/>
   </div>
 </template>
 
@@ -15,3 +15,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.home {
+  padding: 200px 0;
+}
+</style>

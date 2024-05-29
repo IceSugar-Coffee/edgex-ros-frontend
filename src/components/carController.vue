@@ -18,20 +18,21 @@ export default {
     },
     methods: {
         getUrl(act) {
-            var ip = "172.27.134.232" //TODO对应broker代理机的地址, edgex核心服务也要在这台机器上
-            return "http://" + ip + ":59882/api/v2/device/name/" + this.deviceName + "/" + act
-            // return "http://" + ip + ":59882/api/v2/device/name/" + devicename + "/run" //测试用
+            var ip = "localhost" //TODO对应broker代理机的地址, edgex核心服务也要在这台机器上
+            return "http://" + ip + ":8080/" + this.deviceName + "/" + act
         },
         forward() {
-            axios({
-                method: 'put',
-                url: this.getUrl("forward"),
-                data: {
-                    forward: true
-                }
-            })
-                .then(response => console.log(response))
-                .catch(error => console.log(error))
+            this.$router.push("/map");
+            // console.log("req: " + Date.now())
+            // axios({
+            //     method: 'get',
+            //     url: this.getUrl("forward"),
+            // })
+            //     .then(response => {
+            //         console.log("res: " + Date.now())
+            //         console.log(response)
+            //     })
+            //     .catch(error => console.log(error))
         },
         left() {
             axios({

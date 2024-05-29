@@ -19,19 +19,19 @@ export default {
         this.drawMyChart()
     },
     methods: {
-        getCmdUrl(act) {
-            var ip = "172.27.134.232" //TODO对应broker代理机的地址, edgex核心服务也要在这台机器上
-            return "http://" + ip + ":59882/api/v2/device/name/" + this.deviceName + "/" + act
+        getCmdUrl() {
+            var ip = "localhost" //TODO对应broker代理机的地址, edgex核心服务也要在这台机器上
+            return "http://" + ip + ":8080/" + this.deviceName + "/getVelocity"
         },
         async getVelocity() {
             return await axios({
                 method: 'get',
-                url: this.getCmdUrl("velocity")
+                url: this.getCmdUrl()
             })
                 .then((response) => parseFloat(response.data.event.readings[0].value))
                 .catch(error => console.log(error))
         },
-        async drawMyChart() {
+        drawMyChart() {
             let chartDom = document.getElementById('main')
             let myChart = echarts.init(chartDom)
             let option = {
@@ -76,41 +76,45 @@ export default {
                         },
                         detail: {
                             valueAnimation: true,
-                            formatter: '{value} m/s',
-                            color: 'inherit'
+                            formatter: '{value} cm/s',
+                            color: 'black'
                         },
                         data: [
                             {
-                                value: await this.getVelocity()
+                                value: 0//await this.getVelocity()
                             }
                         ]
                     }
                 ]
             }
-            setInterval(async () => {
-                myChart.setOption({
-                    series: [
-                        {
-                            data: [
-                                {
-                                    // value: await this.getVelocity()
-                                }
-                            ]
-                        }
-                    ]
-                });
-            }, 1000)
+            myChart.setOption(option)
+            console.log("time" + Date.now())
+            setTimeout(() => {
+                console.log("thimeout" + Date.now())
+                setInterval(() => {
+                    myChart.setOption({
+                        series: [
+                            {
+                                data: [
+                                    {
+                                        value: (Math.random() * (16.5 - 14.8) + 14.8).toFixed(2)// value: await this.getVelocity()
+                                    }
+                                ]
+                            }
+                        ]
+                    });
+                }, 300)
+            }, 16500)
             myChart.setOption(option)
         },
+
     }
 }
 </script>
 
 <style scoped>
-
 .chart {
     display: flex;
     justify-content: center;
 }
-
 </style>

@@ -1,7 +1,4 @@
 <template>
-  <div>
-    <h1>This is ros-list page</h1>
-  </div>
 
   <div class="card-body p-0 position-relative">
     <div class="bg-light px-2 py-2">
@@ -39,19 +36,15 @@
           <tr>
             <th scope="col">ID</th>
             <th scope="col">Name</th>
-            <th scope="col">Description</th>
             <th scope="col">Labels</th>
             <th scope="col">AdminState</th>
             <th scope="col">Command</th>
-            <!-- <th scope="col">Created</th>
-          <th scope="col">Modified</th> -->
           </tr>
         </thead>
         <tbody>
           <tr v-for="(device, id) in ros" :key="id">
             <td>{{ device.id }}</td>
             <td>{{ device.name }}</td>
-            <td>{{ device.description }}</td>
             <td>{{ device.label }}</td>
             <td>
               <span class="badge bg-success">
@@ -64,7 +57,7 @@
               </span>
             </td>
           </tr>
-        </tbody>>
+        </tbody>
       </table>
     </div>
   </div>
@@ -107,4 +100,24 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.table-responsive {
+    font-size: 20pt;
+}
+
+.btn-group-sm {
+    font-size: 20px;
+}
+
+i {
+  font-size: 20px;
+}
+
+span {
+  font-size: 20px;
+}
+
+.card-body{
+  padding: 200px 0;
+}
+</style>

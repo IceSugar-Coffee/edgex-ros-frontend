@@ -82,4 +82,8 @@ p {
 .setup[data-v-9e9e3e87] {
     color: rgb(7, 101, 130);
 }
+
+h1 {
+    margin-bottom: 40px;
+}
 </style>

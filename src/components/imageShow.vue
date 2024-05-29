@@ -1,5 +1,5 @@
 <template>
-    <img src="http://172.19.166.145:8080/stream?topic=/camera/rgb/image_raw">
+    <img src="../assets/mark.gif" width="1001px">
 </template>
 
 <script>

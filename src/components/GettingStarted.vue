@@ -51,7 +51,7 @@ li {
 } */
 
 a {
-    color: #42b983;
+    color: rgb(64, 158, 255);
     text-decoration: inherit;
     touch-action: manipulation;
     margin: 18px 0;
@@ -73,7 +73,7 @@ p {
 }
 
 .description {
-    font-size: 16px;
+    font-size: 20px;
     margin: 18px 0 30px;
     /* max-width: 960px; */
     line-height: 1.5;
@@ -88,7 +88,7 @@ p {
     transition: background-color .5s, color .5s;
     position: relative;
     font-weight: 600;
-    background-color: rgb(66, 184, 131);
+    background-color: rgb(64, 158, 255);
     color: #fff;
     margin-right: 18px;
     padding: 8px 1em;

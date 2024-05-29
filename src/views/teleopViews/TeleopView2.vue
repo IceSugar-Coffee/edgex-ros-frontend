@@ -2,30 +2,34 @@
   <TeleopHead deviceName="device2" />
   <div class="container">
     <div class="left-panel">
-      <imageShow deviceName="device2" />
+      <!-- <imageShow deviceName="device2" /> -->
     </div>
     <div class="right-panel">
       <controller deviceName="device2" />
       <chart deviceName="device2" />
       <velocityForm deviceName="device2" />
+      <gensui2/>
     </div>
   </div>
 </template>
 
 <script>
-import imageShow from "../../components/imageShow.vue"
+// import imageShow from "../../components/imageShow.vue"
 import chart from "../../components/MyChart.vue"
 import controller from "../../components/carController.vue"
 import TeleopHead from "../../components/TeleopHead.vue"
-import velocityForm from "../../components/velocityButton.vue"
+import velocityForm from "../../components/velocityButton2.vue"
+import gensui2 from "../../components/genSui2.vue"
+
 
 export default {
   components: {
     chart,
-    imageShow,
+    // imageShow,
     controller,
     TeleopHead,
-    velocityForm
+    velocityForm,
+    gensui2
   },
   data() {
     return {}
@@ -42,7 +46,8 @@ export default {
 }
 
 .left-panel {
-  flex: 1;
+  width: 1000px;
+  /* flex: 1; */
   display: flex;
   flex-direction: column;
 }
@@ -58,10 +63,10 @@ export default {
   justify-content: center;
 }
 
-.imageShow {
+/* .imageShow {
   flex: 1;
   justify-content: center;
-}
+} */
 
 .controller {
   flex: 1;
@@ -71,5 +76,8 @@ export default {
 .velocityForm {
   justify-content: center;
   flex: 1;
+}
+.TeleopHead {
+  margin-bottom-end: 200px;
 }
 </style>

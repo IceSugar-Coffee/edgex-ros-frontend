@@ -8,6 +8,7 @@
       <controller deviceName="device1" />
       <chart deviceName="device1" />
       <velocityForm deviceName="device1" />
+      <gensui />
     </div>
   </div>
 </template>
@@ -18,6 +19,8 @@ import chart from "../../components/MyChart.vue"
 import controller from "../../components/carController.vue"
 import TeleopHead from "../../components/TeleopHead.vue"
 import velocityForm from "../../components/velocityButton.vue"
+import gensui from "../../components/genSui.vue"
+
 
 export default {
   components: {
@@ -25,7 +28,8 @@ export default {
     imageShow,
     controller,
     TeleopHead,
-    velocityForm
+    velocityForm,
+    gensui
   },
   data() {
     return {}
@@ -42,7 +46,8 @@ export default {
 }
 
 .left-panel {
-  flex: 1;
+  width: 1000px;
+  /* flex: 1; */
   display: flex;
   flex-direction: column;
 }
@@ -68,8 +73,16 @@ export default {
   justify-content: center;
 }
 
+.gensui {
+  flex: 1;
+  justify-content: center;
+}
+
 .velocityForm {
   justify-content: center;
   flex: 1;
+}
+.TeleopHead {
+  margin-bottom-end: 200px;
 }
 </style>

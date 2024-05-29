@@ -1,6 +1,5 @@
 <template>
   <div class="ros">
-    <img alt="Vue logo" src="../assets/bg_x.png">
     <rosList/>
   </div>
 </template>
@@ -19,4 +18,11 @@ export default {
 <style scoped>
 @import 'bootstrap/dist/css/bootstrap.css';
 @import '@fortawesome/fontawesome-free/css/all.min.css';
+
+.ros{
+  padding: 200px 0;
+  width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+}
 </style>

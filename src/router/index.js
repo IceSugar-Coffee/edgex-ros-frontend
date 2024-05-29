@@ -5,41 +5,42 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    meta: { title: '首页', icon: "HomeFilled"}
   },
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: () => import('../views/AboutView.vue')
   },
   {
     path: '/teleop1',
     name: 'teleop1',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/teleopViews/TeleopView1.vue')
+    component: () => import('../views/teleopViews/TeleopView1.vue')
   },
   {
     path: '/teleop2',
     name: 'teleop2',
-    component: () => import(/* webpackChunkName: "about" */ '../views/teleopViews/TeleopView2.vue')
+    component: () => import('../views/teleopViews/TeleopView2.vue')
   },
   {
     path: '/teleop3',
     name: 'teleop3',
-    component: () => import(/* webpackChunkName: "about" */ '../views/teleopViews/TeleopView3.vue')
+    component: () => import('../views/teleopViews/TeleopView3.vue')
   },
   {
     path: '/roslist',
     name: 'roslist',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/RosView.vue')
+    component: () => import('../views/RosView.vue')
+  },
+  {
+    path: "/map",
+    name: "map",
+    component: () => import('../views/MapView.vue')
+  },{
+    path: "/mark",
+    name: "mark",
+    component: () => import('../views/MarkView.vue')
   }
 ]
 
